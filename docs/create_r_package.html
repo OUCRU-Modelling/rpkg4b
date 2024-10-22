@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Create R Pacakge - 2&nbsp; Build your first R package</title>
+<title>Create R Package - 2&nbsp; Build your first R package</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,7 +148,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Create R Pacakge</a> 
+      <a href="./">Create R Package</a> 
     </div>
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
@@ -199,13 +199,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#cheatsheet" id="toc-cheatsheet" class="nav-link" data-scroll-target="#cheatsheet"><span class="toc-section-number">2.5.1</span>  Cheatsheet</a></li>
   </ul></li>
-  <li><a href="#releasing-to-cran" id="toc-releasing-to-cran" class="nav-link" data-scroll-target="#releasing-to-cran"><span class="toc-section-number">2.6</span>  Releasing to CRAN</a>
+  <li><a href="#r-package-with-stan" id="toc-r-package-with-stan" class="nav-link" data-scroll-target="#r-package-with-stan"><span class="toc-section-number">2.6</span>  R package with STAN</a>
   <ul class="collapse">
-  <li><a href="#release-workflow" id="toc-release-workflow" class="nav-link" data-scroll-target="#release-workflow"><span class="toc-section-number">2.6.1</span>  Release workflow</a></li>
-  <li><a href="#caveats" id="toc-caveats" class="nav-link" data-scroll-target="#caveats"><span class="toc-section-number">2.6.2</span>  Caveats</a></li>
+  <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start"><span class="toc-section-number">2.6.1</span>  Quick start</a></li>
+  <li><a href="#additional-material" id="toc-additional-material" class="nav-link" data-scroll-target="#additional-material"><span class="toc-section-number">2.6.2</span>  Additional material</a></li>
   </ul></li>
-  <li><a href="#example-package" id="toc-example-package" class="nav-link" data-scroll-target="#example-package"><span class="toc-section-number">2.7</span>  Example package</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="toc-section-number">2.8</span>  Resources</a></li>
+  <li><a href="#releasing-to-cran" id="toc-releasing-to-cran" class="nav-link" data-scroll-target="#releasing-to-cran"><span class="toc-section-number">2.7</span>  Releasing to CRAN</a>
+  <ul class="collapse">
+  <li><a href="#release-workflow" id="toc-release-workflow" class="nav-link" data-scroll-target="#release-workflow"><span class="toc-section-number">2.7.1</span>  Release workflow</a></li>
+  <li><a href="#common-issues-and-how-to-resolve-them" id="toc-common-issues-and-how-to-resolve-them" class="nav-link" data-scroll-target="#common-issues-and-how-to-resolve-them"><span class="toc-section-number">2.7.2</span>  Common issues and how to resolve them</a></li>
+  <li><a href="#things-that-needed-to-be-double-check-before-submission" id="toc-things-that-needed-to-be-double-check-before-submission" class="nav-link" data-scroll-target="#things-that-needed-to-be-double-check-before-submission"><span class="toc-section-number">2.7.3</span>  Things that needed to be double check before submission</a></li>
+  <li><a href="#caveats" id="toc-caveats" class="nav-link" data-scroll-target="#caveats"><span class="toc-section-number">2.7.4</span>  Caveats</a></li>
+  </ul></li>
+  <li><a href="#example-package" id="toc-example-package" class="nav-link" data-scroll-target="#example-package"><span class="toc-section-number">2.8</span>  Example package</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="toc-section-number">2.9</span>  Resources</a></li>
   </ul>
 </nav>
     </div>
@@ -404,7 +411,7 @@ Trouble shooting NAMESPACE
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">expect_equal</span>(actual, expected)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Test passed 🥳</code></pre>
+<pre><code>Test passed 🥇</code></pre>
 </div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
@@ -511,10 +518,55 @@ Tip
 <p><img src="img/cheatsheet.png" class="img-fluid" width="701"></p>
 </section>
 </section>
-<section id="releasing-to-cran" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="releasing-to-cran"><span class="header-section-number">2.6</span> Releasing to CRAN</h2>
-<section id="release-workflow" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="release-workflow"><span class="header-section-number">2.6.1</span> Release workflow</h3>
+<section id="r-package-with-stan" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="r-package-with-stan"><span class="header-section-number">2.6</span> R package with STAN</h2>
+<section id="quick-start" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="quick-start"><span class="header-section-number">2.6.1</span> Quick start</h3>
+<ul>
+<li><p>Install <code>rstantools</code> and <code>rstan</code> packages</p></li>
+<li><p>Run one of the following commands:</p>
+<ul>
+<li><p><code>rstantools::rstan_create_package(path = "pkgname")</code> to create <u><strong>new package</strong></u> with STAN functionality</p></li>
+<li><p><code>rstantools::use_rstan()</code> to add STAN functionality to <u><strong>existing package</strong></u></p></li>
+</ul></li>
+<li><p>Store your STAN models (.stan files) under <code>inst/</code> folder</p></li>
+<li><p>Run <code>rstan::config()</code> after adding STAN models (make sure to do this after adding or updating STAN model)</p></li>
+<li><p>Run <code>devtools::document()</code> to compile STAN models. You should find the translated C++ files under <code>src/</code> folder</p></li>
+<li><p>Write your R function under <code>R/</code> folder just like normal, and your STAN models is accessible via <code>stanmodels$model_name</code></p></li>
+</ul>
+</section>
+<section id="additional-material" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="additional-material"><span class="header-section-number">2.6.2</span> Additional material</h3>
+<ul>
+<li><p><a href="https://cran.r-project.org/web/packages/rstantools/vignettes/minimal-rstan-package.html#documentation">A quick guide for R package that uses rstan</a></p></li>
+<li><p>Example for a function with STAN functionality: <a href="https://github.com/OUCRU-Modelling/serosv/blob/main/R/hierarchical_bayesian_model.R"><code>serosv::hierarchical_bayesian_model()</code></a></p></li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warnings on Mac
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mac users may encounter WARNING during <code>devtools::check()</code> with the following message</p>
+<p><code>checking top-level files ... WARNING A complete check needs the 'checkbashisms' script. See section ‘Configure and cleanup’ in the ‘Writing R Extensions’ manual.</code></p>
+<p>that may persists even after installing <code>checkbashisms</code> via terminal. This may be caused by RStudio using different <code>$PATH</code>. To resolve this, there are 3 options:</p>
+<ul>
+<li><p><a href="https://github.com/rstudio/rstudio/issues/10551">Change PATH manually</a></p></li>
+<li><p>Remove <code>configure</code>, <code>configure.win</code> which are the files that need to be checked (not recommended)</p></li>
+<li><p>Or simply ignore the message since CRAN check system will have <code>checkbashisms</code> anyways</p></li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="releasing-to-cran" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="releasing-to-cran"><span class="header-section-number">2.7</span> Releasing to CRAN</h2>
+<section id="release-workflow" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="release-workflow"><span class="header-section-number">2.7.1</span> Release workflow</h3>
 <p>The most concrete expression of the release process is the checklist produced by <a href="https://usethis.r-lib.org/reference/use_release_issue.html"><code>usethis::use_release_issue()</code></a>, which opens a GitHub issue containing a list of todo’s.</p>
 <details>
   <summary>
@@ -554,9 +606,43 @@ Tip
 <li><p><input type="checkbox" disabled="">&nbsp;<code>usethis::use_news_md()</code></p></li>
 </ul>
 </details>
+<p>But to summarize the process, there are 3 stages for the submission process</p>
+<p><strong>Local checks</strong></p>
+<ul>
+<li><p>Run <code>devtools::check()</code> and resolve any ERRORs, WARNINGs, and try to not have any NOTEs if possible (as CRAN will not allow some specific NOTEs). After resolving all issues, copy and paste the check result to <code>cran-comments.md</code> (generated by <code>usethis::use_cran_comment()</code>)</p></li>
+<li><p>If you find some NOTEs are un-resolvable, make sure to also include the NOTEs and explanation in <code>cran-comments.md</code></p></li>
+<li><p>Make sure to double check documentations following the checklist</p></li>
+</ul>
+<p><strong>Run check on servers</strong></p>
+<p>There are several R functions to check package compatibility on other OS</p>
+<ul>
+<li><p>Run <code>devtools::check_win_devel()</code> to check your package on a Windows server</p></li>
+<li><p>Run <code>devtools::check_mac_release()</code> to check your package on a MacOS server</p></li>
+</ul>
+<p>If there are any OS-specific issues, make sure to note that in <code>cran-comments.md</code> as well</p>
+<p><strong>Submission</strong></p>
+<ul>
+<li><p>Call <code>usethis::use_version()</code> to update your package version number then submit to cran with <code>devtools::submit_cran()</code></p></li>
+<li><p>Wait for CRAN email, but be prepared for several rejections before your package is finally approved</p></li>
+<li><p>Once you received the approval email, generate a github release using &nbsp;<code>usethis::use_github_release()</code> and update version to development mode using &nbsp;<code>usethis::use_dev_version(push = TRUE)</code></p></li>
+</ul>
 </section>
-<section id="caveats" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="caveats"><span class="header-section-number">2.6.2</span> Caveats</h3>
+<section id="common-issues-and-how-to-resolve-them" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="common-issues-and-how-to-resolve-them"><span class="header-section-number">2.7.2</span> Common issues and how to resolve them</h3>
+<ul>
+<li><p><code>devtools::check()</code> don’t like tidyverse syntax (<code>NOTE:</code> <code>no visible binding for global variable …</code> ) This can be ignored but make sure to <a href="https://stackoverflow.com/questions/9439256/how-can-i-handle-r-cmd-check-no-visible-binding-for-global-variable-notes-when">include explanation for this NOTE in cran-comments.md</a></p></li>
+<li><p>Note regarding package size (<code>checking installed package size … NOTE</code>). Similarly, this NOTE can be ignored but require a explanation in <code>cran-comments.md</code></p></li>
+</ul>
+</section>
+<section id="things-that-needed-to-be-double-check-before-submission" class="level3" data-number="2.7.3">
+<h3 data-number="2.7.3" class="anchored" data-anchor-id="things-that-needed-to-be-double-check-before-submission"><span class="header-section-number">2.7.3</span> Things that needed to be double check before submission</h3>
+<ul>
+<li>Include contributors, references: make sure that you include authors of any code you copied for your package, and any reference for your methodology</li>
+<li>Document your code properly: make sure your roxygen all include <span class="citation" data-cites="return">@return</span> tag and explain the returned result</li>
+</ul>
+</section>
+<section id="caveats" class="level3" data-number="2.7.4">
+<h3 data-number="2.7.4" class="anchored" data-anchor-id="caveats"><span class="header-section-number">2.7.4</span> Caveats</h3>
 <p><strong>About DESCRIPTION file</strong></p>
 <ul>
 <li><p><code>Author</code> list: if part of your code is derived, copied from other sources, the authors of such code must be included in Author field with ‘ctb’ (contributor) role</p></li>
@@ -610,12 +696,12 @@ Tip
 </ul>
 </section>
 </section>
-<section id="example-package" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="example-package"><span class="header-section-number">2.7</span> Example package</h2>
+<section id="example-package" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="example-package"><span class="header-section-number">2.8</span> Example package</h2>
 <p>The package used for this tutorial is available at <a href="https://github.com/quingzz/demoPkg">Github</a></p>
 </section>
-<section id="resources" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="resources"><span class="header-section-number">2.8</span> Resources</h2>
+<section id="resources" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="resources"><span class="header-section-number">2.9</span> Resources</h2>
 <p>A sample R package: <a href="https://thinhong.github.io/denim/" class="uri">https://thinhong.github.io/denim/</a>﻿</p>
 <p>Popular R packages: <a href="https://tidyverse.tidyverse.org/" class="uri">https://tidyverse.tidyverse.org/</a></p>
 <p>Thorough guide to R package development: <a href="https://r-pkgs.org" class="uri">https://r-pkgs.org</a></p>
